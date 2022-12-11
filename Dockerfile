@@ -10,6 +10,4 @@ WORKDIR /app
 
 COPY . .
 
-EXPOSE 5000
-
-CMD ["gunicorn" , "main:app"]
+CMD ["python", "main.py"]
