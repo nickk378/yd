@@ -10,6 +10,6 @@ WORKDIR /app
 
 COPY . .
 
-EXPOSE 5000/tcp
+EXPOSE 8000
 
 CMD ["python", "main.py"]
