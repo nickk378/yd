@@ -10,6 +10,6 @@ WORKDIR /app
 
 COPY . .
 
-EXPOSE 8000
-
-CMD ["python", "main.py"]
+EXPOSE 5000
+RUN chmod +x /app/start.sh
+ENTRYPOINT ["./start.sh"]
