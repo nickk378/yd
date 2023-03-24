@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+RUN apt-get update && apt-get -y install python3
 RUN python3 -m venv venv
 
 WORKDIR /app
