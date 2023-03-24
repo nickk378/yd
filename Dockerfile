@@ -1,7 +1,6 @@
-FROM ubuntu:22.04
+FROM ubuntu:bionic
 
-
-RUN apt-get update && add-apt-repository ppa:deadsnakes/ppa && apt-get -y install python3
+RUN apt-get update && apt-get -y install python3 python3-pip python3-venv
 RUN python3 -m venv venv
 
 WORKDIR /app
