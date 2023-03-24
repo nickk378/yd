@@ -1,2 +1,2 @@
 cd /app
-gunicorn main:app
+gunicorn -b :5000 main:app
