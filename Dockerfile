@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 
-RUN apt-get update && apt-get -y install python3
+RUN apt-get update && add-apt-repository ppa:deadsnakes/ppa && apt-get -y install python3
 RUN python3 -m venv venv
 
 WORKDIR /app
