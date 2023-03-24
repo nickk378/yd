@@ -1,6 +1,6 @@
-FROM ubuntu:bionic
-ARG DEBIAN_FONTEND=noninteractive
-RUN apt-get update && apt-get -y install python3 python3-pip python3-venv
+FROM python:3.10
+
+RUN apt update && apt upgrade -y
 RUN python3 -m venv venv
 
 WORKDIR /app
