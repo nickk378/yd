@@ -1,15 +1,17 @@
-FROM python:3.10
+FROM ubuntu:22.04
 
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
 
-RUN cd /
-RUN pip install -U pip && pip install -U -r requirements.txt
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+RUN python3 -m venv venv
+
 WORKDIR /app
 
-COPY . .
+# install dependencies
+COPY requirements.txt ./requirements.txt
+RUN pip3 install -r requirements.txt
 
-EXPOSE 5000
-RUN chmod +x /app/start.sh
+# Copy project
+COPY . .
+EXPOSE 8000
+RUN chmod +x /code/start.sh
 ENTRYPOINT ["./start.sh"]
