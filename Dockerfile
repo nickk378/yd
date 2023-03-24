@@ -11,6 +11,6 @@ RUN pip3 install -r requirements.txt
 
 # Copy project
 COPY . .
-EXPOSE 8000
+EXPOSE 5000
 RUN chmod +x ./start.sh
 ENTRYPOINT ["./start.sh"]
